@@ -1,0 +1,22 @@
+{
+  "name": "Eskiler",
+  "short_name": "Eskiler",
+  "start_url": "https://xmeroriginals.github.io/eskiler/",
+  "scope": "https://xmeroriginals.github.io/eskiler/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#354d4d",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/eskiler/assets/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/eskiler/assets/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
