@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#354d4d" />
+    <link rel="manifest" href="src/manifest.json" />
+
+    <meta
+      name="description"
+      content="Eski kelimelerin modern karşılıklarını bulun."
+    />
+    <meta
+      name="keywords"
+      content="Eski, kelimeler, eski kelimeler, eski, Eski Kelimeler, Kelimeler, Eskiler, eskiler, Kelieler, Klimeler, tdk, türk dil kurumu, TDK, Tdk, tDk, Türkçe, Osmanlı"
+    />
+    <meta name="author" content="XmerOriginals" />
+    <meta property="og:title" content="Eski Kelimeler" />
+    <meta
+      property="og:description"
+      content="Eski Kelimeler | Kelimelerin Eskisi"
+    />
+    <meta
+      property="og:image"
+      content="https://xmeroriginals.github.io/eskiler/assets/EskilerLogo.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://xmeroriginals.github.io/eskiler/"
+    />
+    <meta property="og:site_name" content="Eskiler" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Eski Kelimeler | Kelimelerin Eskisi" />
+    <meta
+      name="twitter:description"
+      content="Eski kelimelerin modern karşılıklarını bulun."
+    />
+    <meta
+      name="twitter:image"
+      content="https://xmeroriginals.github.io/eskiler/assets/EskilerLogo.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://xmeroriginals.github.io/eskiler/assets/EskilerLogo.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://xmeroriginals.github.io/eskiler/assets/EskilerLogo.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Eskiler",
+        "url": "https://xmeroriginals.github.io/eskiler/",
+        "applicationCategory": "Religion",
+        "description": "Eski kelimelerin modern karşılıklarını bulun.",
+        "operatingSystem": "All",
+        "inLanguage": "tr"
+      }
+    </script>
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const systemPrefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <title>Eski Kelimeler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                light: "#1e293b",
+                dark: "#ffffff",
+              },
+              secondary: {
+                light: "#f8fafc",
+                dark: "#0f172a",
+              },
+              surface: {
+                light: "#ffffff",
+                dark: "#1e293b",
+              },
+              onSurface: {
+                light: "#1e293b",
+                dark: "#f8fafc",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-secondary-light dark:bg-secondary-dark min-h-screen flex flex-col items-center py-8 px-4 transition-colors duration-300 ease-in-out"
+  >
+    <button
+      id="backToTopBtn"
+      class="fixed bottom-5 right-5 z-50 bg-surface-light dark:bg-surface-dark border border-gray-200 dark:border-gray-700 rounded-xl p-4 cursor-pointer transition-all duration-200 font-medium text-onSurface-light dark:text-onSurface-dark truncate hidden"
+    >
+      ↑
+    </button>
+    <div class="w-full max-w-2xl mx-auto">
+      <div class="flex justify-between items-center mb-8">
+        <div class="flex">
+          <img
+            src="https://xmeroriginals.github.io/eskiler/assets/EskilerLogo.png"
+            alt="EskilerLogo"
+            class="w-14 h-14 p-2 flex items-center justify-center"
+            draggable="false"
+          />
+          <div class="text-left">
+            <h1
+              class="text-3xl font-bold text-onSurface-light dark:text-onSurface-dark mb-1"
+            >
+              Eskiler
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">
+              Aradığınız kelimenin eski halini ve kullanımını bulun.
+            </p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button
+            id="theme-toggle"
+            class="w-10 h-10 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center"
+          >
+            <svg
+              id="sun-icon"
+              class="w-full h-full object-contain transform scale-90 text-gray-500 dark:hidden hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <svg
+              id="moon-icon"
+              class="w-full h-full object-contain transform scale-90 text-gray-400 dark:block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+          <button
+            id="TDKManuelSearch"
+            class="w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <img
+              src="assets/tdk.svg"
+              alt="TDK"
+              class="w-full h-full scale-[1.4] transform origin-center"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="relative mb-8 will-change-transform">
+        <div
+          class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none"
+        >
+          <svg
+            class="h-5 w-5 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Kelimenizi yazınız..."
+          class="w-full py-4 pl-12 pr-5 bg-surface-light dark:bg-surface-dark text-onSurface-light dark:text-onSurface-dark placeholder-gray-400 dark:placeholder-gray-500 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark focus:border-transparent transition-all duration-200 ease-out"
+          autocomplete="off"
+          spellcheck="false"
+          enterkeyhint="search"
+        />
+      </div>
+      <div
+        id="notification"
+        class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 hidden"
+      ></div>
+      <ul id="results" class="space-y-3 no-scrollbar"></ul>
+      <div id="empty-state" class="text-center py-12">
+        <div class="mx-auto h-24 w-24 mb-4 flex items-center justify-center">
+          <svg
+            class="h-full w-full text-gray-300 dark:text-gray-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M9.663 17h4.673M12 3v1m8.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium text-gray-500 dark:text-gray-400 mb-1">
+          Arama yapın
+        </h3>
+        <p
+          class="text-sm text-gray-400 dark:text-gray-500 max-w-xs mx-auto text-balance"
+        >
+          Eski kelimelerin modern karşılıklarını keşfetmek için bir kelime yazın
+        </p>
+      </div>
+
+      <div
+        id="TDK"
+        class="mt-12 pt-12 border-t border-gray-200 dark:border-gray-700 text-center"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400">TDK</p>
+        <p
+          id="TDKResults"
+          class="text-sm text-gray-500 dark:text-gray-300"
+          style="display: none; white-space: pre-wrap"
+        ></p>
+      </div>
+
+      <div
+        class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-700 text-center"
+      >
+        <div
+          class="text-sm text-gray-400 dark:text-gray-500 flex justify-center"
+        >
+          <p>Günümüzde Unutulmuş bir Kelimeniz mi var?</p>
+        </div>
+        <div
+          class="text-sm text-gray-500 dark:text-gray-400 flex justify-center"
+        >
+          <i class="fa-brands fa-instagram mt-1 mr-1"></i>
+          <a href="https://ig.me/m/xmerofficial">xmerofficial</a>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
