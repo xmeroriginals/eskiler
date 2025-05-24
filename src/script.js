@@ -61,14 +61,13 @@ function setupSearchInput() {
     emptyState.classList.remove("hidden");
     resultsList.classList.add("hidden");
 
-    if (!data || !Array.isArray(data) || data.length === 0 || !data.every(item => typeof item === 'object' && item !== null)) {
-        return;
-    }
-
     searchInput.addEventListener("input", function () {
         const now = Date.now();
         if (now - lastSearchTime < searchDebounceTime) return;
         lastSearchTime = now;
+        if (!data || !Array.isArray(data) || data.length === 0 || !data.every(item => typeof item === 'object' && item !== null)) {
+            return;
+        }
 
         setTimeout(() => {
             const searchTerm = this.value.trim();
@@ -154,12 +153,11 @@ function normalizeString(str) {
 }
 
 function performSearch(searchTerm) {
+    const normalizedSearchTerm = normalizeString(searchTerm);
     if (!data || !Array.isArray(data) || data.length === 0 || !data.every(item => typeof item === 'object' && item !== null)) {
         showNotification("Bir hata oluştu.", "error");
         return;
     }
-
-    const normalizedSearchTerm = normalizeString(searchTerm);
     const results = data.filter((item) => {
         for (let key in item) {
             const eskiKelime = normalizeString(key);
