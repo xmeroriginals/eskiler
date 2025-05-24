@@ -98,7 +98,7 @@ async function loadData() {
                 `;
 
         await new Promise((resolve) => setTimeout(resolve, 600));
-        const response = await fetch("src/data.json");
+        const response = await fetch("./data/data.json");
         data = await response.json();
 
         emptyState.innerHTML = `
